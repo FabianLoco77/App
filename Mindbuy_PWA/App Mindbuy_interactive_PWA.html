@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4CAF50">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Control de Compras Impulsivas - Wireframes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .wireframes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 40px;
+        }
+        
+        .phone-mockup {
+            background: #1a1a1a;
+            border-radius: 25px;
+            padding: 20px 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+        
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 6px;
+            background: #333;
+            border-radius: 3px;
+        }
+        
+        .screen {
+            background: white;
+            border-radius: 15px;
+            min-height: 580px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .interface-title {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 15px;
+            text-align: center;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 20px;
+            padding: 0 5px;
+        }
+        
+        .logo-area {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .welcome-text {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            width: 100%;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #4CAF50;
+            border: 2px solid #4CAF50;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            width: 100%;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        
+        .metric-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        
+        .metric-label {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .progress-bar {
+            background: #e0e0e0;
+            border-radius: 10px;
+            height: 8px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+        
+        .quick-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .action-btn {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 15px 10px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #333;
+            cursor: pointer;
+        }
+        
+        .action-icon {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .navigation-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+        
+        .nav-item {
+            text-align: center;
+            font-size: 0.7rem;
+            color: #666;
+            cursor: pointer;
+        }
+        
+        .nav-item.active {
+            color: #4CAF50;
+        }
+        
+        .nav-icon {
+            font-size: 1.2rem;
+            margin-bottom: 2px;
+            display: block;
+        }
+        
+        .question-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .question-text {
+            font-size: 0.9rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .option {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        .option:hover {
+            border-color: #4CAF50;
+            background: #f0f8f0;
+        }
+        
+        .emergency-btn {
+            background: linear-gradient(45deg, #f44336, #d32f2f);
+            color: white;
+            border: none;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            width: 100%;
+            margin: 20px 0;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .timer {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .timer-display {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #f39c12;
+            margin-bottom: 5px;
+        }
+        
+        .checklist {
+            margin: 15px 0;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .checkbox {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #4CAF50;
+            border-radius: 3px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        
+        .chart-placeholder {
+            background: linear-gradient(45deg, #e3f2fd, #bbdefb);
+            border-radius: 12px;
+            height: 120px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1976d2;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .goal-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        
+        .goal-image {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ff9800, #f57c00);
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .notification-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .notification-icon {
+            width: 40px;
+            height: 40px;
+            background: #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+        
+        .notification-text {
+            flex: 1;
+        }
+        
+        .notification-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .notification-time {
+            font-size: 0.7rem;
+            color: #666;
+        }
+        
+        .content-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 12px;
+            margin: 8px 0;
+        }
+        
+        .content-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .content-meta {
+            font-size: 0.7rem;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .community-post {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 12px;
+            margin: 8px 0;
+        }
+        
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .user-avatar {
+            width: 30px;
+            height: 30px;
+            background: #4CAF50;
+            border-radius: 50%;
+            margin-right: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+        }
+        
+        .post-content {
+            font-size: 0.8rem;
+            color: #333;
+            line-height: 1.4;
+        }
+        
+        .settings-section {
+            margin: 15px 0;
+        }
+        
+        .settings-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .settings-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .toggle {
+            width: 40px;
+            height: 20px;
+            background: #4CAF50;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .toggle::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            right: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .report-summary {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .big-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .achievement-badge {
+            background: #ffd700;
+            color: #333;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-size: 1.5rem;
+        }
+        
+        .share-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .share-btn {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 15px 8px;
+            text-align: center;
+            font-size: 0.7rem;
+            cursor: pointer;
+        }
+        
+        .share-icon {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .breathing-exercise {
+            background: linear-gradient(45deg, #e3f2fd, #bbdefb);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .breathing-circle {
+            width: 80px;
+            height: 80px;
+            background: #2196f3;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            animation: breathe 4s infinite;
+        }
+        
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .footer p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+    
+/* === Prototype Enhancements === */
+.toggle.off { background: #c7c7c7; }
+.toggle.off::after { left: 2px; right: auto; }
+.toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%);
+  background: rgba(0,0,0,0.85); color: #fff; padding: 10px 14px; border-radius: 10px;
+  font-size: 0.85rem; z-index: 9999; opacity: 0; transition: opacity .25s, transform .25s;
+}
+.toast.show { opacity: 1; transform: translate(-50%, -6px); }
+.prototype-toolbar {
+  position: fixed; right: 16px; bottom: 16px; z-index: 9998;
+  background: #ffffff; border: 1px solid #e0e0e0; border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.12); padding: 10px; display: flex; gap: 8px; align-items: center;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+.prototype-toolbar button, .prototype-toolbar select {
+  font-size: 12px; padding: 6px 10px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff; cursor: pointer;
+}
+.prototype-toolbar .pill { background: #4CAF50; color: #fff; border-color: #4CAF50; }
+.prototype-badge {
+  position: fixed; top: 12px; right: 12px; z-index: 9997;
+  background: linear-gradient(45deg,#4CAF50,#45a049); color:#fff; padding: 6px 10px; border-radius: 999px;
+  font-size: 12px; box-shadow: 0 6px 18px rgba(0,0,0,.15);
+}
+.hidden { display: none !important; }
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 Control de Compras</h1>
+            <p>13 Interfaces del Journey de Usuario</p>
+            <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">
+                Generado el {datetime.now().strftime('%d/%m/%Y %H:%M')}
+            </p>
+        </div>
+        
+        <div class="wireframes-grid">
+            <!-- Interface 1: Bienvenida y Registro -->
+            <div class="phone-mockup" data-interface="1">
+                <div class="screen" data-screen="1">
+                    <div class="interface-title">1. Bienvenida y Registro</div>
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <span>●●●○○</span>
+                        <span>🔋 100%</span>
+                    </div>
+                    
+                    <div class="logo-area">
+                        <div class="logo">💳</div>
+                        <div class="welcome-text">Control de Compras</div>
+                        <div class="subtitle">Tu compañero para decisiones financieras inteligentes</div>
+                    </div>
+                    
+                    <div style="margin-top: 40px;">
+                        <button class="btn-primary">📧 Continuar con Email</button>
+                        <button class="btn-secondary">🔍 Continuar con Google</button>
+                        <button class="btn-secondary">🍎 Continuar con Apple</button>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 20px; font-size: 0.7rem; color: #666;">
+                        Al continuar, aceptas nuestros Términos y Política de Privacidad
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interface 2: Perfil Financiero Inicial -->
+            <div class="phone-mockup" data-interface="2">
+                <div class="screen" data-screen="2">
+                    <div class="interface-title">2. Perfil Financiero Inicial</div>
+                    <div class="status-bar">
+                        <span>←</span>
+                        <span>Configuración Inicial</span>
+                        <span>2/5</span>
+                    </div>
+                    
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 40%;"></div>
+                    </div>
+                    
+                    <div class="question-card">
+                        <div class="question-text">¿Cuál es tu rango de ingresos mensuales?</div>
+                        <div class="option">💵 Menos de $2,000,000</div>
+                        <div class="option">💰 $2,000,000 - $4,000,000</div>
+                        <div class="option">💎 $4,000,000 - $6,000,000</div>
+                        <div class="option">🏆 Más de $6,000,000</div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 30px; font-size: 0.8rem; color: #666;">
+                        Esta información nos ayuda a personalizar tu experiencia
+                    </div>
+                    
+                    <button class="btn-primary" style="margin-top: 20px;">Continuar</button>
+                </div>
+            </div>
+            
+            <!-- Interface 3: Dashboard Principal -->
+            <div class="phone-mockup" data-interface="3">
+                <div class="screen" data-screen="3">
+                    <div class="interface-title">3. Dashboard Principal</div>
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <span>Hola, María 👋</span>
+                        <span>🔔 3</span>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0;">
+                        <div class="metric-card">
+                            <div class="metric-value">15</div>
+                            <div class="metric-label">Días sin compras impulsivas</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">$420K</div>
+                            <div class="metric-label">Ahorrado este mes</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-placeholder">
+                        📊 Gastos: 70% Planificados vs 30% Impulsivos
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <div class="action-btn">
+                            <span class="action-icon">🛍️</span>
+                            Quiero comprar
+                        </div>
+                        <div class="action-btn">
+                            <span class="action-icon">📈</span>
+                            Mis gastos
+                        </div>
+                        <div class="action-btn">
+                            <span class="action-icon">🎯</span>
+                            Mis metas
+                        </div>
+                        <div class="action-btn">
+                            <span class="action-icon">🏆</span>
+                            Logros
+                        </div>
+                    </div>
+                    
+                    <div class="navigation-bar">
+                        <div class="nav-item active">
+                            <span class="nav-icon">🏠</span>
+                            Inicio
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">📊</span>
+                            Análisis
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">🎯</span>
+                            Metas
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">👥</span>
+                            Comunidad
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">⚙️</span>
+                            Config
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interface 4: Antes de Comprar -->
+            <div class="phone-mockup" data-interface="4">
+                <div class="screen" data-screen="4">
+                    <div class="interface-title">4. Antes de Comprar (Pausa Reflexiva)</div>
+                    <div class="status-bar">
+                        <span>←</span>
+                        <span>Momento de Reflexión</span>
+                        <span>⏸️</span>
+                    </div>
+                    
+                    <div style="text-align: center; margin: 30px 0;">
+                        <div style="font-size: 3rem; margin-bottom: 15px;">🛑</div>
+                        <div style="font-size: 1.2rem; font-weight: bold; color: #f44336; margin-bottom: 10px;">
+                            ¡Pausa!
+                        </div>
+                        <div style="font-size: 0.9rem; color: #666;">
+                            Antes de comprar, tómate un momento para reflexionar
+                        </div>
+                    </div>
+                    
+                    <div class="timer">
+                        <div class="timer-display">05:00</div>
+                        <div style="font-size: 0.8rem;">Tiempo de reflexión</div>
+                    </div>
+                    
+                    <div class="checklist">
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <span style="font-size: 0.9rem;">¿Lo tenías planeado comprar?</span>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <span style="font-size: 0.9rem;">¿Tienes el dinero disponible?</span>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checkbox"></div>
+                            <span style="font-size: 0.9rem;">¿Cómo te sientes ahora?</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 20px;">
+                        <button class="btn-secondary">❤️ Agregar a lista de deseos</button>
+                        <button class="btn-secondary">⏰ Comprar más tarde</button>
+                        <button class="btn-primary">✅ Continuar con la compra</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interface 5: Análisis de Gastos -->
+            <div class="phone-mockup" data-interface="5">
+                <div class="screen" data-screen="5">
+                    <div class="interface-title">5. Análisis de Gastos</div>
+                    <div class="status-bar">
+                        <span>←</span>
+                        <span>Análisis Financiero</span>
+                        <span>📊</span>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; margin: 15px 0; font-size: 0.8rem;">
+                        <span style="background: #4CAF50; color: white; padding: 5px 10px; border-radius: 15px;">Mes</span>
+                        <span style="color: #666;">Semana</span>
+                        <span style="color: #666;">Año</span>
+                    </div>
+                    
+                    <div class="chart-placeholder">
+                        🥧 Categorías de Gasto<br>
+                        Alimentación 35% | Entretenimiento 25%<br>
+                        Transporte 20% | Otros 20%
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div style="font-size: 0.9rem; color: #333; margin-bottom: 5px;">💡 Insight Personalizado</div>
+                        <div style="font-size: 0.8rem; color: #666; line-height: 1.4;">
+                            Gastas 40% más cuando estás estresado. Los martes son tu día más impulsivo.
+                        </div>
+                    </div>
+                    
+                    <div class="chart-placeholder" style="height: 80px;">
+                        📈 Proyección: Podrías ahorrar $300K este mes
+                    </div>
+                    
+                    <button class="btn-primary">🎯 Establecer nuevos límites</button>
+                    
+                    <div class="navigation-bar">
+                        <div class="nav-item">
+                            <span class="nav-icon">🏠</span>
+                            Inicio
+                        </div>
+                        <div class="nav-item active">
+                            <span class="nav-icon">📊</span>
+                            Análisis
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">🎯</span>
+                            Metas
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">👥</span>
+                            Comunidad
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">⚙️</span>
+                            Config
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interface 6: Establecimiento de Metas -->
+            <div class="phone-mockup" data-interface="6">
+                <div class="screen" data-screen="6">
+                    <div class="interface-title">6. Establecimiento de Metas</div>
+                    <div class="status-bar">
+                        <span>←</span>
+                        <span>Mis Metas Financieras</span>
+                        <span>+</span>
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <div style="font-size: 1rem; font-weight: 600; margin-bottom: 15px;">🎯 Metas Populares</div>
+                        
+                        <div class="goal-card">
+                            <div class="goal-image">✈️</div>
+                            <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: 5px;">Vacaciones</div>
+                            <div style="font-size: 0.7rem; color: #666;">$2,000,000 en 6 meses</div>
+                        </div>
+                        
+                        <div class="goal-card">
+                            <div class="goal-image">🚗</div>
+                            <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: 5px;">Carro Nuevo</div>
+                            <div style="font-size: 0.7rem; color: #666;">$15,000,000 en 2 años</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <div style="font-size: 1rem; font-weight: 600; margin-bottom: 15px;">📱 Mi Meta Actual</div>
+                        <div class="goal-card" style="background: #f0f8f0; border-color: #4CAF50;">
+                            <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">iPhone 15 Pro</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%;"></div>
+                            </div>
+                            <div style="font-size: 0.8rem; color: #666; margin-top: 5px;">
+                                $2,600,000 de $4,000,000 (65%)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary">+ Crear nueva meta</button>
+                    
+                    <div class="navigation-bar">
+                        <div class="nav-item">
+                            <span class="nav-icon">🏠</span>
+                            Inicio
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">📊</span>
+                            Análisis
+                        </div>
+                        <div class="nav-item active">
+                            <span class="nav-icon">🎯</span>
+                            Metas
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">👥</span>
+                            Comunidad
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">⚙️</span>
+                            Config
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interface 7: Centro de Alertas y Notificaciones -->
+            <div class="phone-mockup" data-interface="7">
+                <div class="screen" data-screen="7">
+                    <div class="interface-title">7. Centro de Alertas y Notificaciones</div>
+                    <div class="status-bar">
+                        <span>←</span>
+                        <span>Notificaciones</span>
+                        <span>⚙️</span>
+                    </div>
+                    
+                    <div style="margin: 15px 0;">
+                        <div class="notification-item">
+                            <div class="notification-icon">🎉</div>
+                            <div class="notification-text">
+                                <div class="notification-title">¡Meta alcanzada!</div>
+                                <div class="notification-time">Completaste tu ahorro para iPhone - hace 2 horas</div>
+                            </div>
+                        </div>
+                        
+                        <div class="notification-item">
+                            <div class="notification-icon" style="background: #ff9800;">⚠️</div>
+                            <div class="notification-text">
+                                <div class="notification-title">Límite de gastos</div>
+                                <div class="notification-time">Has gastado 80% de tu presupuesto mensual - hace 1 día</div>
+                            </div>
+                        </div>
+                        
+                        <div class="notification-item">
+                            <div class="notification-icon" style="background: #2196f3;">💡</div>
+                            <div class="notification-text">
+                                <div class="notification-title">Tip personalizado</div>
+                                <div class="notification-time">Evita comprar cuando estés estresado - hace 2 días</div>
+                            </div>
+                        </div>
+                        
+                        <div class="notification-item">
+                            <div class="notification-icon" style="background: #9c27b0;">🏆</div>
+                            <div class="notification-text">
+                                <div class="notification-title">Desafío semanal</div>
+                                <div class="notification-time">Únete al reto "7 días sin compras impulsivas" - hace 3 días</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 30px 0; padding: 15px; background: #f8f9fa; border-radius: 12px;">
+                        <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">⚙️ Configurar Alertas</div>
+                        <div style="font-size: 0.8rem; color: #666;">
+                            Personaliza cuándo y cómo quieres recibir notificaciones
+                        </div>
+                        <button class="btn-secondary" style="margin-top: 10px; padding: 8px 15px; font-size: 0.8rem;">
+                            Configurar notificaciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interface 8: Educación Financiera -->
+            <div class="phone-mockup" data-interface="8">
+                <div class="screen" data-screen="8">
+                    <div class="interface-title">8. Educación Financiera</div>
+                    <div class="status-bar">
+                        <span>←</span>
+                        <span>Aprende</span>
+                        <span>🔍</span>
+                    </div>
+                    
+                    <div style="margin: 15px 0;">
+                        <div style="font-size: 1rem; font-weight: 600; margin-bottom: 15px;">📚 Contenido Recomendado</div>
+                        
+                        <div class="content-card">
+                            <div class="content-title">🧠 Psicología del Consumo Impulsivo</div>
+                            <div style="font-size: 0.8rem; color: #666; margin-bottom: 8px;">
+                                Entiende por qué compras sin pensar y cómo controlarlo
+                            </div>
+                            <div class="content-meta">
+                                <span>📖 3 min lectura</span>
+                                <span style="color: #4CAF50;">✓ Completado</span>
+                            </div>
+                        </div>
+                        
+                        <div class="content-card">
+                            <div class="content-title">💰 Presupuesto 50/30/20</div>
+                            <div style="font-size: 0.8rem; color: #666; margin-bottom: 8px;">
+                                La regla simple para organizar tus finanzas personales
+                            </div>
+                            <div class="content-meta">
+                                <span>🎥 2 min video</span>
+                                <span style="color: #ff9800;">⏳ En progreso</span>
+                            </div>
+                        </div>
+                        
+                        <div class="content-card">
+                            <div class="content-title">🎯 Metas SMART Financieras</div>
+                            <div style="font-size: 0.8rem; color: #666; margin-bottom: 8px;">
+                                Cómo establecer objetivos financieros alcanzables
+                            </div>
+                            <div class="content-meta">
+                                <span>📊 Infografía</span>
+                                <span style="color: #666;">Nuevo</span>
+                            </div>
+                        </div>
+                        
+                        <div class="content-card">
+                            <div class="content-title">💳 Tarjetas de Crédito: Guía Completa</div>
+                            <div style="font-size: 0.8rem; color: #666; margin-bottom: 8px;">
+                                Usa tu tarjeta inteligentemente sin caer en deudas
+                            </div>
+                            <div class="content-meta">
+                                <span>🎧 5 min audio</span>
+                                <span style="color: #666;">Para ti</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 20px 0; text-align: center;">
+                        <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: 5px;">🏆 Tu Progreso</div>
+                        <div style="font-size: 0.8rem; color: #666;">7 de 15 contenidos completados</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 47%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interface 9: Comunidad y Desafíos -->
+            <div class="phone-mockup" data-interface="9">
+                <div class="screen" data-screen="9">
+                    <div class="interface-title">9. Comunidad y Desafíos</div>
+                    <div class="status-bar">
+                        <span>←</span>
+                        <span>Comunidad</span>
+                        <span>💬</span>
+                    </div>
+                    
+                    <div style="margin: 15px 0;">
+                        <div style="font-size: 1rem; font-weight: 600; margin-bottom: 15px;">🏆 Desafío del Mes</div>
+                        
+                        <div style="background: linear-gradient(45deg, #4CAF50, #45a049); color: white; border-radius: 12px; padding: 15px; margin-bottom: 15px;">
+                            <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 5px;">30 Días Sin Compras Impulsivas</div>
+                            <div style="font-size: 0.8rem; opacity: 0.9; margin-bottom: 10px;">
+                                1,247 participantes • Termina en 12 días
+                            </div>
+                            <div class="progress-bar" style="background: rgba(255,255,255,0.3);">
+                                <div class="progress-fill" style="background: white; width: 60%;"></div>
+                            </div>
+                            <div style="font-size: 0.8rem; margin-top: 5px;">Día 18 de 30</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <div style="font-size: 1rem; font-weight: 600; margin-bottom: 15px;">💬 Feed de la Comunidad</div>
+                        
+                        <div class="community-post">
+                            <div class="post-header">
+                                <div class="user-avatar">A</div>
+                                <div>
+                                    <div style="font-size: 0.8rem; font-weight: 600;">Anónimo</div>
+                                    <div style="font-size: 0.7rem; color: #666;">hace 2 horas</div>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                🎉 ¡Completé mi primera semana sin compras impulsivas! El truco fue eliminar las apps de mi teléfono.
+                            </div>
+                            <div style="margin-top: 8px; font-size: 0.7rem; color: #666;">
+                                ❤️ 23 • 💬 5 comentarios
+                            </div>
+                        </div>
+                        
+                        <div class="community-post">
+                            <div class="post-header">
+                                <div class="user-avatar">M</div>
+                                <div>
+                                    <div style="font-size: 0.8rem; font-weight: 600;">Mentor</div>
+                                    <div style="font-size: 0.7rem; color: #666;">hace 4 horas</div>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                💡 Tip del día: Antes de comprar algo, pregúntate "¿Seguiría queriendo esto en una semana?"
+                            </div>
+                            <div style="margin-top: 8px; font-size: 0.7rem; color: #666;">
+                                ❤️ 156 • 💬 32 comentarios
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="navigation-bar">
+                        <div class="nav-item">
+                            <span class="nav-icon">🏠</span>
+                            Inicio
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">📊</span>
+                            Análisis
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">🎯</span>
+                            Metas
+                        </div>
+                        <div class="nav-item active">
+                            <span class="nav-icon">👥</span>
+                            Comunidad
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">⚙️</span>
+                            Config
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interface 10: Configuración y Personalización -->
+            <div class="phone-mockup" data-interface="10">
+                <div class="screen" data-screen="10">
+                    <div class="interface-title">10. Configuración y Personalización</div>
+                    <div class="status-bar">
+                        <span>←</span>
+                        <span>Configuración</span>
+                        <span>👤</span>
+                    </div>
+                    
+                    <div style="text-align: center; margin: 20px 0;">
+                        <div style="width: 60px; height: 60px; background: #4CAF50; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">M</div>
+                        <div style="font-size: 1rem; font-weight: 600;">María González</div>
+                        <div style="font-size: 0.8rem; color: #666;">maria.gonzalez@email.com</div>
+                    </div>
+                    
+                    <div class="settings-section">
+                        <div class="settings-title">💰 Configuración Financiera</div>
+                        <div class="settings-item">
+                            <span style="font-size: 0.9rem;">Límite mensual de gastos</span>
+                            <span style="font-size: 0.8rem; color: #4CAF50;">$2,500,000</span>
+                        </div>
+                        <div class="settings-item">
+                            <span style="font-size: 0.9rem;">Conectar cuenta bancaria</span>
+                            <span style="font-size: 0.8rem; color: #666;">→</span>
+                        </div>
+                        <div class="settings-item">
+                            <span style="font-size: 0.9rem;">Moneda preferida</span>
+                            <span style="font-size: 0.8rem; color: #666;">COP</span>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-section">
+                        <div class="settings-title">🔔 Notificaciones</div>
+                        <div class="settings-item">
+                            <span style="font-size: 0.9rem;">Alertas de límite</span>
+                            <div class="toggle"></div>
+                        </div>
+                        <div class="settings-item">
+                            <span style="font-size: 0.9rem;">Recordatorios de metas</span>
+                            <div class="toggle"></div>
+                        </div>
+                        <div class="settings-item">
+                            <span style="font-size: 0.9rem;">Tips diarios</span>
+                            <div class="toggle"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-section">
+                        <div class="settings-title">🔒 Privacidad y Seguridad</div>
+                        <div class="settings-item">
+                            <span style="font-size: 0.9rem;">Autenticación biométrica</span>
+                            <div class="toggle"></div>
+                        </div>
+                        <div class="settings-item">
+                            <span style="font-size: 0.9rem;">PIN de acceso</span>
+                            <span style="font-size: 0.8rem; color: #666;">→</span>
+                        </div>
+                    </div>
+                    
+                    <div class="navigation-bar">
+                        <div class="nav-item">
+                            <span class="nav-icon">🏠</span>
+                            Inicio
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">📊</span>
+                            Análisis
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">🎯</span>
+                            Metas
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">👥</span>
+                            Comunidad
+                        </div>
+                        <div class="nav-item active">
+                            <span class="nav-icon">⚙️</span>
+                            Config
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interface 11: Reportes y Progreso -->
+            <div class="phone-mockup" data-interface="11">
+                <div class="screen" data-screen="11">
+                    <div class="interface-title">11. Reportes y Progreso</div>
+                    <div class="status-bar">
+                        <span>←</span>
+                        <span>Mi Progreso</span>
+                        <span>📄</span>
+                    </div>
+                    
+                    <div style="margin: 15px 0;">
+                        <div style="font-size: 1rem; font-weight: 600; margin-bottom: 15px;">📈 Resumen del Mes</div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+                            <div class="report-summary">
+                                <div class="big-number">$850K</div>
+                                <div style="font-size: 0.8rem;">Dinero Ahorrado</div>
+                            </div>
+                            <div class="report-summary">
+                                <div class="big-number">23</div>
+                                <div style="font-size: 0.8rem;">Compras Evitadas</div>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-placeholder">
+                            📊 Evolución Mensual<br>
+                            ↗️ +65% mejora vs mes anterior
+                        </div>
+                        
+                        <div style="margin: 20px 0;">
+                            <div style="font-size: 1rem; font-weight: 600; margin-bottom: 15px;">🏆 Logros Desbloqueados</div>
+                            
+                            <div style="display: flex; align-items: center; padding: 10px; background: #f8f9fa; border-radius: 10px; margin: 8px 0;">
+                                <div class="achievement-badge" style="width: 40px; height: 40px; font-size: 1rem; margin-right: 15px;">🥇</div>
+                                <div>
+                                    <div style="font-size: 0.9rem; font-weight: 600;">Primera Semana</div>
+                                    <div style="font-size: 0.7rem; color: #666;">7 días consecutivos sin compras impulsivas</div>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: center; padding: 10px; background: #f8f9fa; border-radius: 10px; margin: 8px 0;">
+                                <div class="achievement-badge" style="width: 40px; height: 40px; font-size: 1rem; margin-right: 15px;">💰</div>
+                                <div>
+                                    <div style="font-size: 0.9rem; font-weight: 600;">Ahorrador Experto</div>
+                                    <div style="font-size: 0.7rem; color: #666;">Ahorraste más de $500,000 en un mes</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn-primary">📄 Descargar reporte completo</button>
+                        <button class="btn-secondary">📱 Compartir progreso</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interface 12: Zona de Crisis/Apoyo -->
+            <div class="phone-mockup" data-interface="12">
+                <div class="screen" data-screen="12">
+                    <div class="interface-title">12. Zona de Crisis/Apoyo</div>
+                    <div class="status-bar">
+                        <span>←</span>
+                        <span>Ayuda Inmediata</span>
+                        <span>🆘</span>
+                    </div>
+                    
+                    <div style="text-align: center; margin: 20px 0;">
+                        <div style="font-size: 2.5rem; margin-bottom: 10px;">🆘</div>
+                        <div style="font-size: 1.2rem; font-weight: bold; color: #f44336; margin-bottom: 8px;">
+                            ¿Necesitas ayuda AHORA?
+                        </div>
+                        <div style="font-size: 0.9rem; color: #666;">
+                            Estamos aquí para apoyarte en este momento difícil
+                        </div>
+                    </div>
+                    
+                    <button class="emergency-btn">
+                        🛑 AYUDA INMEDIATA
+                    </button>
+                    
+                    <div style="margin: 20px 0;">
+                        <div style="font-size: 1rem; font-weight: 600; margin-bottom: 15px;">🧘 Respira Conmigo</div>
+                        
+                        <div class="breathing-exercise">
+                            <div class="breathing-circle">🫁</div>
+                            <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: 5px;">Respiración Guiada</div>
+                            <div style="font-size: 0.8rem;">Inhala 4 seg • Mantén 4 seg • Exhala 4 seg</div>
+                            <button class="btn-secondary" style="margin-top: 10px; padding: 8px 15px; font-size: 0.8rem;">
+                                ▶️ Comenzar
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <div style="font-size: 1rem; font-weight: 600; margin-bottom: 15px;">💭 Recuerda Por Qué</div>
+                        <div style="background: #f8f9fa; border-radius: 10px; padding: 15px; font-size: 0.9rem; color: #333; line-height: 1.4;">
+                            "Quiero ahorrar para mi viaje a Europa. Cada compra innecesaria me aleja de mi sueño."
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0;">
+                        <button class="btn-secondary" style="padding: 10px 8px; font-size: 0.8rem;">
+                            💬 Chat con mentor
+                        </button>
+                        <button class="btn-secondary" style="padding: 10px 8px; font-size: 0.8rem;">
+                            🎯 Ver mis metas
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Interface 13: Compartir Éxito y Recomendación -->
+            <div class="phone-mockup" data-interface="13">
+                <div class="screen" data-screen="13">
+                    <div class="interface-title">13. Compartir Éxito y Recomendación</div>
+                    <div class="status-bar">
+                        <span>←</span>
+                        <span>¡Felicitaciones!</span>
+                        <span>🎉</span>
+                    </div>
+                    
+                    <div style="text-align: center; margin: 20px 0;">
+                        <div style="font-size: 3rem; margin-bottom: 15px;">🎉</div>
+                        <div style="font-size: 1.3rem; font-weight: bold; color: #4CAF50; margin-bottom: 10px;">
+                            ¡Increíble Progreso!
+                        </div>
+                        <div style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">
+                            Has transformado tus hábitos financieros
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(45deg, #4CAF50, #45a049); color: white; border-radius: 15px; padding: 20px; margin: 20px 0; text-align: center;">
+                        <div style="font-size: 1.1rem; font-weight: bold; margin-bottom: 15px;">Tus Logros</div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div>
+                                <div style="font-size: 1.5rem; font-weight: bold;">$2.1M</div>
+                                <div style="font-size: 0.8rem;">Ahorrado</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 1.5rem; font-weight: bold;">45</div>
+                                <div style="font-size: 0.8rem;">Días de control</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 1.5rem; font-weight: bold;">3</div>
+                                <div style="font-size: 0.8rem;">Metas alcanzadas</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 1.5rem; font-weight: bold;">89%</div>
+                                <div style="font-size: 0.8rem;">Mejora</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <div style="font-size: 1rem; font-weight: 600; margin-bottom: 15px;">📱 Comparte tu Éxito</div>
+                        
+                        <div class="share-options">
+                            <div class="share-btn">
+                                <span class="share-icon" style="color: #E4405F;">📷</span>
+                                Instagram
+                            </div>
+                            <div class="share-btn">
+                                <span class="share-icon" style="color: #25D366;">💬</span>
+                                WhatsApp
+                            </div>
+                            <div class="share-btn">
+                                <span class="share-icon" style="color: #1DA1F2;">🐦</span>
+                                Twitter
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 20px 0; background: #f8f9fa; border-radius: 12px; padding: 15px; text-align: center;">
+                        <div style="font-size: 0.9rem; font-weight: 600; margin-bottom: 8px;">🎁 Invita a un Amigo</div>
+                        <div style="font-size: 0.8rem; color: #666; margin-bottom: 10px;">
+                            Ambos recibirán 1 mes gratis cuando se registre
+                        </div>
+                        <button class="btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">
+                            📧 Enviar invitación
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>App Control de Compras Impulsivas</strong></p>
+            <p>Wireframes generados para Project Market Fit</p>
+            <p>Desarrollado por: <a href="#">Grupo 1 - Universidad EAN</a></p>
+            <p style="font-size: 0.8rem; margin-top: 10px;">
+                © 2025 - Todos los derechos reservados
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        // Script para interactividad básica
+        document.addEventListener('DOMContentLoaded', function() {
+            // Agregar efectos hover a los botones
+            const buttons = document.querySelectorAll('.btn-primary, .btn-secondary, .action-btn');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    this.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+            
+            // Animación para las barras de progreso
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            });
+            
+            console.log('App Control de Compras - Wireframes cargados correctamente');
+            console.log('13 interfaces del journey de usuario disponibles');
+        });
+    </script>
+
+<div class="prototype-badge">Modo prototipo</div>
+<div class="prototype-toolbar">
+  <span style="font-weight:600; font-size:12px;">Ir a interfaz:</span>
+  <select id="proto-jump"></select>
+  <button id="proto-prev">Anterior</button>
+  <button id="proto-next" class="pill">Siguiente</button>
+</div>
+<div id="proto-toast" class="toast"></div>
+
+
+<script>
+(function(){
+  const log = (...a)=>console.log('[Mindbuy]',...a);
+  const toastEl = document.getElementById('proto-toast');
+  function toast(msg, ms=1800){
+    if(!toastEl) return alert(msg);
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    setTimeout(()=> toastEl.classList.remove('show'), ms);
+  }
+  // Hydrate interface selector
+  const pm = document.querySelectorAll('.phone-mockup');
+  const jump = document.getElementById('proto-jump');
+  const prev = document.getElementById('proto-prev');
+  const next = document.getElementById('proto-next');
+  if (jump){
+    pm.forEach((el, i)=>{
+      const title = el.querySelector('.interface-title')?.textContent?.trim() || ('Interfaz ' + (i+1));
+      const opt = document.createElement('option');
+      opt.value = el.dataset.interface;
+      opt.textContent = `${el.dataset.interface}. ${title}`;
+      jump.appendChild(opt);
+    });
+    function scrollToInterface(idx){
+      const target = document.querySelector(`.phone-mockup[data-interface="${idx}"]`);
+      if(!target){ toast('No encontrada'); return; }
+      target.scrollIntoView({behavior:'smooth', block:'center'});
+      jump.value = idx;
+      toast(`Interfaz ${idx}`);
+    }
+    jump.addEventListener('change', ()=> scrollToInterface(jump.value));
+    prev.addEventListener('click', ()=> {
+      const v = parseInt(jump.value||'1',10);
+      const n = Math.max(1, v-1);
+      scrollToInterface(n);
+    });
+    next.addEventListener('click', ()=> {
+      const v = parseInt(jump.value||'1',10);
+      const n = Math.min(pm.length, v+1);
+      scrollToInterface(n);
+    });
+    // default to first
+    jump.value = '1';
+  }
+
+  // Local storage state
+  const state = {
+    wishlist: JSON.parse(localStorage.getItem('mb-wishlist') || '[]'),
+    savedForLater: JSON.parse(localStorage.getItem('mb-later') || '[]'),
+    settings: JSON.parse(localStorage.getItem('mb-settings') || '{}'),
+  };
+  function persist(){
+    localStorage.setItem('mb-wishlist', JSON.stringify(state.wishlist));
+    localStorage.setItem('mb-later', JSON.stringify(state.savedForLater));
+    localStorage.setItem('mb-settings', JSON.stringify(state.settings));
+  }
+
+  // Enhance checklists (mark as done)
+  document.querySelectorAll('.checklist .checklist-item .checkbox').forEach(box=>{
+    box.setAttribute('role','checkbox');
+    box.setAttribute('aria-checked','false');
+    box.addEventListener('click', (e)=>{
+      const checked = box.getAttribute('aria-checked') === 'true';
+      box.setAttribute('aria-checked', String(!checked));
+      box.style.background = checked ? '' : '#4CAF50';
+      box.style.color = checked ? '' : '#fff';
+      box.textContent = checked ? '' : '✓';
+      const label = box.parentElement.querySelector('span');
+      if (label){
+        label.style.textDecoration = checked ? 'none' : 'line-through';
+        label.style.color = checked ? '#333' : '#2e7d32';
+      }
+    });
+  });
+
+  // Settings toggles
+  document.querySelectorAll('.settings-section .toggle').forEach((tgl, idx)=>{
+    const key = 'toggle_'+idx;
+    // restore
+    if (state.settings[key] === false){ tgl.classList.add('off'); }
+    tgl.addEventListener('click',()=>{
+      const isOff = tgl.classList.toggle('off');
+      state.settings[key] = !isOff;
+      persist();
+      toast(isOff ? 'Notificación desactivada' : 'Notificación activada');
+    });
+  });
+
+  // Nav-item active swap + fake navigation
+  document.querySelectorAll('.navigation-bar').forEach(nav=>{
+    nav.addEventListener('click',(e)=>{
+      const item = e.target.closest('.nav-item');
+      if(!item) return;
+      nav.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('active'));
+      item.classList.add('active');
+      const label = item.textContent.trim();
+      toast('Navegando a: ' + label + ' (simulado)');
+      // Jump to some interfaces from common labels
+      const routeMap = { 'Inicio':1, 'Análisis':5, 'Metas':6, 'Comunidad':9, 'Config':10 };
+      Object.keys(routeMap).forEach(k=>{
+        if (label.includes(k)) {
+          const idx = routeMap[k];
+          const target = document.querySelector(`.phone-mockup[data-interface="${idx}"]`);
+          if (target) target.scrollIntoView({behavior:'smooth', block:'center'});
+        }
+      });
+    });
+  });
+
+  // Quick actions on Dashboard -> jump
+  document.querySelectorAll('.phone-mockup[data-interface="3"] .action-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const txt = btn.textContent.trim();
+      const map = { 'Quiero comprar':4, 'Mis gastos':5, 'Mis metas':6, 'Logros':11 };
+      if (map[txt]) {
+        const target = document.querySelector(`.phone-mockup[data-interface="${map[txt]}"]`);
+        if (target) { target.scrollIntoView({behavior:'smooth', block:'center'}); toast('Abriendo: ' + txt); }
+      }
+    });
+  });
+
+  // Wishlist / comprar más tarde / continuar compra on Interface 4
+  const if4 = document.querySelector('.phone-mockup[data-interface="4"]');
+  if (if4){
+    const btns = if4.querySelectorAll('.btn-secondary, .btn-primary');
+    btns.forEach(b=>{
+      const txt = b.textContent.trim();
+      if (txt.includes('lista de deseos')){
+        b.addEventListener('click', ()=>{
+          const item = { id: Date.now(), note: 'Elemento guardado desde pausa', when: new Date().toISOString() };
+          state.wishlist.push(item); persist();
+          toast('Añadido a tu lista de deseos ✅');
+        });
+      } else if (txt.includes('Comprar más tarde')){
+        b.addEventListener('click', ()=>{
+          const item = { id: Date.now(), when: new Date().toISOString() };
+          state.savedForLater.push(item); persist();
+          toast('Guardado para más tarde ⏰');
+        });
+      } else if (txt.includes('Continuar con la compra')){
+        b.addEventListener('click', ()=> toast('Ok, continúa con tu compra. Yo vigilo el presupuesto. ✅'));
+      }
+    });
+  }
+
+  // Timer (Interface 4) – adds Start/Pause control
+  document.querySelectorAll('.timer').forEach(timer => {
+    const display = timer.querySelector('.timer-display');
+    if (!display) return;
+    // add controls
+    const ctrl = document.createElement('div');
+    ctrl.style.marginTop = '8px';
+    ctrl.innerHTML = '<button class="btn-secondary" style="padding:6px 10px;font-size:.8rem;">Iniciar</button> ' +
+                     '<button class="btn-secondary" style="padding:6px 10px;font-size:.8rem;">Pausar</button> ' +
+                     '<button class="btn-secondary" style="padding:6px 10px;font-size:.8rem;">Reiniciar</button>';
+    timer.appendChild(ctrl);
+    const [startBtn, pauseBtn, resetBtn] = ctrl.querySelectorAll('button');
+    let total = (function(){ const [m,s]=display.textContent.trim().split(':').map(Number); return m*60+s; })();
+    let remain = total, intv=null;
+    function render(){ const m = Math.floor(remain/60).toString().padStart(2,'0'); const s=(remain%60).toString().padStart(2,'0'); display.textContent = m+':'+s; }
+    function tick(){ if (remain>0){ remain--; render(); } else { clearInterval(intv); intv=null; toast('⏰ ¡Tiempo!'); } }
+    startBtn.addEventListener('click', ()=>{ if(!intv){ intv=setInterval(tick,1000); toast('Timer iniciado'); } });
+    pauseBtn.addEventListener('click', ()=>{ if(intv){ clearInterval(intv); intv=null; toast('Timer en pausa'); } });
+    resetBtn.addEventListener('click', ()=>{ remain=total; render(); clearInterval(intv); intv=null; toast('Timer reiniciado'); });
+  });
+
+  // Reports: download CSV & Share
+  const if11 = document.querySelector('.phone-mockup[data-interface="11"]');
+  if (if11){
+    const [dlBtn, shareBtn] = if11.querySelectorAll('button.btn-primary, button.btn-secondary');
+    if (dlBtn){
+      dlBtn.addEventListener('click', ()=>{
+        const rows = [
+          ['Métrica','Valor'],
+          ['Dinero Ahorrado','$850000'],
+          ['Compras Evitadas','23'],
+          ['Mejora_vs_mes_anterior','65%']
+        ];
+        const csv = rows.map(r=>r.join(',')).join('\n');
+        const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = 'reporte_mensual.csv';
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        toast('Descargando reporte CSV');
+      });
+    }
+    if (shareBtn){
+      shareBtn.addEventListener('click', async ()=>{
+        const text = 'Mi progreso: Ahorré $850K, evité 23 compras. #Mindbuy';
+        if (navigator.share){
+          try { await navigator.share({ text, title:'Progreso Mindbuy' }); toast('Compartido ✅'); }
+          catch(e){ navigator.clipboard.writeText(text); toast('Copiado al portapapeles ✅'); }
+        } else {
+          navigator.clipboard.writeText(text); toast('Copiado al portapapeles ✅');
+        }
+      });
+    }
+  }
+
+  // Breathing exercise play button
+  const breathBtn = document.evaluate("//button[contains(., 'Comenzar')]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+  if (breathBtn){
+    breathBtn.addEventListener('click', ()=>{
+      const circle = breathBtn.closest('.breathing-exercise').querySelector('.breathing-circle');
+      const cues = ['Inhala (4)','Mantén (4)','Exhala (4)','Mantén (4)'];
+      let i=0; toast('Ejercicio de respiración ▶️');
+      const loop = setInterval(()=>{
+        circle.textContent = cues[i%4];
+        i++;
+        if (i>16) { clearInterval(loop); circle.textContent='🫁'; toast('Listo. ¿Mejor?'); }
+      }, 1000);
+    });
+  }
+
+  // Education content: mark as completed on click
+  document.querySelectorAll('.content-card').forEach(card=>{
+    card.addEventListener('click', ()=>{
+      const status = card.querySelector('.content-meta span:last-child');
+      if (status) status.textContent = '✓ Completado';
+      card.style.outline = '2px solid #4CAF50';
+      toast('Marcado como completado');
+    });
+  });
+
+  // Share options
+  document.querySelectorAll('.share-options .share-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const platform = btn.textContent.trim();
+      const msg = '¡Estoy transformando mis hábitos financieros con Mindbuy! 💰📉';
+      navigator.clipboard.writeText(msg);
+      toast('Mensaje preparado para ' + platform);
+    });
+  });
+
+  log('Interactividad mejorada lista ✅');
+})();
+</script>
+
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').then(() => {
+      console.log('Service Worker registrado');
+    });
+  });
+}
+</script>
+
+</body>
+</html>
